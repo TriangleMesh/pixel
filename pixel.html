@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel World</title>
+    
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 50px;
+        }
+        .title {
+            color: purple;
+            background: green;
+            font-weight: bold;
+            font-size: 40px;
+            width: 205px;
+            height: 50px;
+            border: purple solid 20px;
+            padding: 10px;
+            margin-bottom: 50px;
+        }
+        .elements{
+            display: grid;
+            grid-template-columns: repeat(20, 20px);
+            grid-template-rows: repeat(20, 20px);
+            margin-bottom: 50px;
+        }
+        .element {
+            background: yellow;
+            width: 20px;
+            height: 20px;
+            box-shadow: 0 0 0 2px green;
+            top: 300px;
+            margin: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Pixel World</div>
+        <div class="elements"></div>
+        
+    </div>
+   
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const elementsContainer = document.querySelector('.elements');
+            for (let i = 0; i < 400; i++) {
+                const element = document.createElement('div');
+                element.className = 'element';
+                element.addEventListener('click', function() {
+                    element.style.backgroundColor = 'purple';
+                });
+                elementsContainer.appendChild(element);
+            }
+        });
+    </script>
+</body>
+</html>
